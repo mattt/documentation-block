@@ -16,7 +16,14 @@ async function main() {
       format: "iife",
       globalName: "BlockBundle",
       minify: true,
-      external: ["fs", "path", "assert", "react", "react-dom"],
+      external: [
+        "fs",
+        "path",
+        "assert",
+        "react",
+        "react-dom",
+        "@primer/behaviors",
+      ],
     });
   });
 
