@@ -20,25 +20,14 @@
   "blocks": [
     {
       "type": "file",
-      "id": "file-block",
-      "title": "Example File Block",
-      "description": "A basic file block",
-      "entry": "/src/blocks/example-file-block/index.tsx",
+      "id": "documentation-file-block",
+      "title": "Documentation Block",
+      "description": "View symbol documentation for a file",
+      "entry": "/src/blocks/documentation-file-block/index.tsx",
       "extensions": [
-        "*"
+        "js"
       ],
-      "example_path": "https://github.com/facebook/react/blob/main/packages/react-dom/index.js"
-    },
-    {
-      "type": "folder",
-      "id": "folder-block",
-      "title": "Example Folder Block",
-      "description": "A basic folder block",
-      "entry": "/src/blocks/example-folder-block/index.tsx",
-      "extensions": [
-        "*"
-      ],
-      "example_path": "https://github.com/githubocto/flat"
+      "example_path": "https://github.com/Surnet/swagger-jsdoc/blob/master/src/utils.js"
     }
   ],
   "dependencies": {
@@ -46,14 +35,25 @@
     "@githubnext/utils": "^0.15.4",
     "@loadable/component": "^5.15.0",
     "@octokit/rest": "^18.12.0",
+    "@primer/behaviors": "^1.1.0",
+    "@primer/react": "^34.7.1",
+    "@types/dompurify": "^2.3.3",
     "@types/lodash.uniqueid": "^4.0.6",
+    "@types/marked": "^4.0.2",
+    "deepmerge": "^4.2.2",
+    "dompurify": "^2.3.6",
     "git-url-parse": "^11.6.0",
     "lodash.uniqueid": "^4.0.1",
+    "marked": "^4.0.12",
     "parse-static-imports": "^1.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-error-boundary": "^3.1.4",
-    "react-query": "^3.32.3"
+    "react-query": "^3.32.3",
+    "styled-components": "^5.3.3",
+    "tree-sitter-javascript": "^0.19.0",
+    "tree-sitter-jsdoc": "tree-sitter/tree-sitter-jsdoc",
+    "web-tree-sitter": "^0.20.5"
   },
   "devDependencies": {
     "@types/git-url-parse": "^9.0.1",

@@ -4,24 +4,24 @@ import { AppInner } from "./components/app-inner";
 import { useDebounce, useLocalStorage, usePackageJson } from "./hooks";
 
 function App() {
-  const [blockId, setBlockId] = useLocalStorage(
+  const [ blockId, setBlockId ] = useLocalStorage(
     "blockId",
     "/src/blocks/example-file-block/index.tsx"
   );
-  const [fileUrl, setFileUrl] = useLocalStorage(
+  const [ fileUrl, setFileUrl ] = useLocalStorage(
     "fileUrl",
     "https://github.com/githubocto/flat/blob/main/src/git.ts"
   );
 
   const debouncedFileUrl = useDebounce(fileUrl, 500);
 
-  const [doMimicProductionEnvironment, setDoMimicProductionEnvironment] =
+  const [ doMimicProductionEnvironment, setDoMimicProductionEnvironment ] =
     useLocalStorage("doMimicProductionEnvironment", false);
 
   const { data: pkgJson, status } = usePackageJson();
 
   const metadataKey = `composable-github-block-template--${blockId}-${debouncedFileUrl}`;
-  const [metadata, setMetadata] = useLocalStorage(metadataKey, {});
+  const [ metadata, setMetadata ] = useLocalStorage(metadataKey, {});
 
   useEffect(() => {
     const onUpdateMetadata = (event: MessageEvent) => {
@@ -40,7 +40,7 @@ function App() {
     return () => {
       window.removeEventListener("message", onUpdateMetadata as EventListener);
     };
-  }, [metadataKey]);
+  }, [ metadataKey ]);
 
   const urlParts = useMemo(() => {
     if (!debouncedFileUrl) return null;
@@ -50,9 +50,9 @@ function App() {
     } catch (e) {
       return null;
     }
-  }, [debouncedFileUrl]);
+  }, [ debouncedFileUrl ]);
 
-  const [block, setBlock] = useState(
+  const [ block, setBlock ] = useState(
     pkgJson?.blocks.find((v) => v.entry === blockId)
   );
 
@@ -62,11 +62,11 @@ function App() {
     if (entry) {
       setBlock(entry);
     } else {
-      const defaultBlockId = pkgJson?.blocks[0].entry;
+      const defaultBlockId = pkgJson?.blocks[ 0 ].entry;
       if (!defaultBlockId) return;
       setBlockId(defaultBlockId);
     }
-  }, [blockId, pkgJson]);
+  }, [ blockId, pkgJson ]);
 
   return (
     <div

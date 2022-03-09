@@ -1,0 +1,8 @@
+table th {
+  font-weight: 500;
+  text-align: right;
+}
+
+table td {
+  padding: 0.25em 0.5em;
+}
