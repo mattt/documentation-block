@@ -134,7 +134,7 @@ export default function (props: FileBlockProps) {
                                             {tag.tag_name}
                                         </Text>
                                     </th>
-                                    <td><Token text={tag.type} /></td>
+                                    <td><Token text={tag.type || "any"} /></td>
                                     <td>
                                         <Text as="span" color="fg.muted">
                                             {tag.description}
