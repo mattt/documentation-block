@@ -111,7 +111,7 @@ export default function (props: FileBlockProps) {
 
             setSymbols(symbols);
         })();
-    }, []);
+    }, [ props.content ]);
 
     return (
         <>

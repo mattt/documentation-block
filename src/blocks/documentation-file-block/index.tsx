@@ -15,7 +15,7 @@ export default function (props: FileBlockProps) {
     ? getLanguageFromFilename(context.path)
     : "N/A";
 
-  const renderContent = useCallback(() => {
+  const renderContent = useCallback((props) => {
     switch (language) {
       case "JavaScript":
         return <JavaScriptDocumentation {...props} />;
@@ -31,7 +31,7 @@ export default function (props: FileBlockProps) {
           <Heading as="h3" sx={{ flex: 1 }}>{context.path}</Heading>
           <Token text={language} />
         </Box>
-        {renderContent()}
+        {renderContent(props)}
       </Box>
     </ThemeProvider>
   );
